@@ -20,8 +20,8 @@ https://mui.com/material-ui/getting-started/installation/
 [x] - Create component folder divided into ATOMIC designs
 [x] - Create Initial Text Input component
 [x] - Install react-hook-form
-[ ] - Create initial form component
-[ ] - Create array of form input props
+[x] - Create initial form component
+[x] - Create array of form input props
 
 The types of inputs required for this reusable component are:
 text - text input
@@ -33,7 +33,8 @@ checkbox - checkbox - assuming this is a single checkbox and not a group
 
 [ ] - Add text input to form  
 [ ] - Create Select input molecule  
-[ ] - Create Checkbox molecule
+[ ] - Create Checkbox molecule  
+[ ] - Use Yup for validation?
 
 # Instructions:
 
