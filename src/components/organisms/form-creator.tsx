@@ -8,6 +8,7 @@ import Checkbox from "../molecules/checkbox";
 
 import styles from "./form-creator.module.css";
 import SelectInput from "@/components/molecules/select";
+import { validationCreator } from "@/utils/validation-creator";
 
 type FormData = {
   formInputs: FormInput[];
@@ -38,25 +39,46 @@ export default function FormCreator({ formInputs, onSubmit }: FormData) {
 }
 
 function InputFactory({
-  formInput: { type, options, ...rest },
+  formInput: { type, isRequired, options, ...rest },
   control,
 }: {
   formInput: FormInput;
   control: Control<FieldValues, any>;
 }) {
+  const validationRules = validationCreator(type, isRequired);
+
   switch (type) {
     case "text":
     case "email":
     case "phone":
     case "postcode":
-      return <TextInput {...rest} control={control} />;
+      return (
+        <TextInput
+          {...rest}
+          control={control}
+          validationRules={validationRules}
+        />
+      );
     case "select":
       if (options) {
-        return <SelectInput {...rest} options={options} control={control} />;
+        return (
+          <SelectInput
+            {...rest}
+            options={options}
+            control={control}
+            validationRules={validationRules}
+          />
+        );
       }
       return <></>;
     case "checkbox":
-      return <Checkbox {...rest} control={control} />;
+      return (
+        <Checkbox
+          {...rest}
+          control={control}
+          validationRules={validationRules}
+        />
+      );
     default:
       return <></>;
   }

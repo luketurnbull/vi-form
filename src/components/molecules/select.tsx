@@ -10,23 +10,24 @@ import {
 } from "@mui/material";
 import { FormInput } from "@/constants/global";
 
-type SelectInputProps = Omit<FormInput, "type"> & {
+type SelectInputProps = Omit<FormInput, "type" | "isRequired"> & {
   control: Control<FieldValues, any>;
   options: string[];
+  validationRules?: Record<string, any>;
 };
 
 export default function SelectInput({
   name,
   label,
   control,
-  isRequired,
+  validationRules,
   options,
 }: SelectInputProps) {
   return (
     <Controller
       name={name}
       control={control}
-      rules={{ required: isRequired ? `${label} is required` : false }}
+      rules={validationRules}
       render={({ field, fieldState: { error } }) => (
         <FormControl fullWidth margin="normal" error={!!error}>
           <InputLabel>{label}</InputLabel>

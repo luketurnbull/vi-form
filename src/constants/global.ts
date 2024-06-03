@@ -1,7 +1,15 @@
 export type FormInput = {
-  type: "text" | "email" | "phone" | "postcode" | "select" | "checkbox";
+  type: FormInputType;
   name: string;
   label: string;
   options?: string[];
   isRequired: boolean;
 };
+
+export type FormInputType =
+  | "text"
+  | "email"
+  | "phone"
+  | "postcode"
+  | "select"
+  | "checkbox";

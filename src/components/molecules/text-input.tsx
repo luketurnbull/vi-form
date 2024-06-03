@@ -4,7 +4,8 @@ import { Control, Controller, FieldValues } from "react-hook-form";
 import { TextField } from "@mui/material";
 import { FormInput } from "@/constants/global";
 
-type TextInputProps = Omit<FormInput, "type"> & {
+type TextInputProps = Omit<FormInput, "type" | "isRequired"> & {
+  validationRules?: Record<string, any>;
   control: Control<FieldValues, any>;
 };
 
@@ -12,12 +13,8 @@ export default function TextInput({
   name,
   label,
   control,
-  isRequired,
+  validationRules,
 }: TextInputProps) {
-  const validationRules = isRequired
-    ? { required: `${label} is required` }
-    : {};
-
   return (
     <Controller
       name={name}

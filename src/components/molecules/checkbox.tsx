@@ -6,20 +6,17 @@ import { FormControlLabel, Checkbox as MuiCheckbox } from "@mui/material";
 import styles from "@/app/page.module.css";
 import { FormInput } from "@/constants/global";
 
-type CheckboxProps = Omit<FormInput, "type"> & {
+type CheckboxProps = Omit<FormInput, "type" | "isRequired"> & {
   control: Control<FieldValues, any>;
+  validationRules?: Record<string, any>;
 };
 
 export default function Checkbox({
   name,
   label,
   control,
-  isRequired,
+  validationRules,
 }: CheckboxProps) {
-  const validationRules = isRequired
-    ? { required: `${label} is required` }
-    : {};
-
   return (
     <Controller
       name={name}
