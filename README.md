@@ -14,7 +14,9 @@ run `pnpm dev`
 [x] - Install MUI
 [x] - Create component folder divided into ATOMIC designs
 [x] - Create Initial Text Input component
-[ ] - Install react-hooks-forms
+[x] - Install react-hook-form
+[ ] - Create initial form in page.tsx
+[ ] - Add input to form
 
 # Instructions:
 
