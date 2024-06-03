@@ -33,11 +33,10 @@ checkbox - checkbox - assuming this is a single checkbox and not a group
 
 [x] - Create text input
 [x] - Add text input to form  
-[x] - Add validation message inside text input
-[] - Validation not working, possibly to do with with fields rendering after useForm has been added- will try using YUP instead
-
-[ ] - Create Select input molecule  
-[ ] - Create Checkbox molecule
+[x] - Add validation message inside text input  
+[x] - Add validation on blur  
+[x] - Create Checkbox molecule  
+[ ] - Create Select input molecule
 
 # Instructions:
 

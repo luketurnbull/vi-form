@@ -25,7 +25,6 @@ export default function TextInput({
       rules={validationRules}
       defaultValue=""
       render={({ field, fieldState: { error } }) => {
-        console.log(error);
         return (
           <TextField
             {...field}

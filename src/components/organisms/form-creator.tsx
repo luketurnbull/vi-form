@@ -3,7 +3,10 @@
 import { Control, FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "@/components/molecules/text-input";
 import Button from "@mui/material/Button";
-import { FormInput } from "@/app/constants/global";
+import { FormInput } from "@/constants/global";
+import Checkbox from "../molecules/checkbox";
+
+import styles from "./form-creator.module.css";
 
 type FormData = {
   formInputs: FormInput[];
@@ -20,13 +23,15 @@ export default function FormCreator({ formInputs }: FormData) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {formInputs.map((formInput: FormInput) => (
-        <InputFactory
-          key={formInput.name}
-          formInput={formInput}
-          control={control}
-        />
-      ))}
+      <div className={styles.formContainer}>
+        {formInputs.map((formInput: FormInput) => (
+          <InputFactory
+            key={formInput.name}
+            formInput={formInput}
+            control={control}
+          />
+        ))}
+      </div>
       <Button type="submit" variant="contained" color="primary">
         Submit
       </Button>
@@ -35,22 +40,22 @@ export default function FormCreator({ formInputs }: FormData) {
 }
 
 function InputFactory({
-  formInput,
+  formInput: { type, ...rest },
   control,
 }: {
   formInput: FormInput;
   control: Control<FieldValues, any>;
 }) {
-  switch (formInput.type) {
+  switch (type) {
     case "text":
-      return (
-        <TextInput
-          name={formInput.name}
-          label={formInput.label}
-          control={control}
-          required={formInput.required}
-        />
-      );
+    case "email":
+    case "phone":
+    case "postcode":
+      return <TextInput {...rest} control={control} />;
+    case "select":
+      return <></>;
+    case "checkbox":
+      return <Checkbox {...rest} control={control} />;
     default:
       return <></>;
   }
