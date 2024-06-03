@@ -31,6 +31,7 @@ postcode - text input, number only- max 4 chars?
 select - select
 checkbox - checkbox - assuming this is a single checkbox and not a group
 
+[x] - Create text input
 [ ] - Add text input to form  
 [ ] - Create Select input molecule  
 [ ] - Create Checkbox molecule  
