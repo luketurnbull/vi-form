@@ -31,22 +31,34 @@ postcode - text input, number only- max 4 chars?
 select - select
 checkbox - checkbox - assuming this is a single checkbox and not a group
 
-[x] - Create text input
+[x] - Create text input  
 [x] - Add text input to form  
 [x] - Add validation message inside text input  
-[x] - Add validation on blur  
-[x] - Create Checkbox molecule  
-[ ] - Create Select input molecule
-
-# Instructions:
-
-## VI Test
+[x] - Add validation on blur
 
 These inputs should have validation and you should also note in the
 design the required fields \*.
 
+[x] - Create Checkbox molecule  
+[ ] - Move submit button into atoms  
+[ ] - Create Select input molecule  
+[ ] - Add more validation besides required  
+[ ] - Add a prop to know if the input should be half the size of the form
+
+Name - maxlength and minlength?  
+Email - email regex  
+Phone - phone validation Numbers and (+) ?  
+Postcode - Numbers, max 4?
+
 Once the form is valid and the user hits submit, print out the JSON
 object below the submit button.
+
+[ ] - Move on submit outside of form so it can be reused  
+[ ] - Move
+
+# Instructions:
+
+## VI Test
 
 You may use form validation libraries and other libraries at your choice
 for this test.
