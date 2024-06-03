@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Control,
-  FieldValues,
-  Form,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
+import { Control, FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "@/components/molecules/text-input";
 import Button from "@mui/material/Button";
 
@@ -23,25 +17,9 @@ type FormData = {
 };
 
 export default function UserForm({ formInputs }: FormData) {
-  // Create an object with default values
-  const defaultValues = formInputs.reduce((acc, input) => {
-    acc[input.name] = input.type === "checkbox" ? false : "";
-    return acc;
-  }, {} as Record<string, any>);
-
-  const {
-    handleSubmit,
-    control,
-    formState: { errors, isDirty, isValid },
-  } = useForm({
-    defaultValues,
+  const { handleSubmit, control } = useForm({
+    mode: "onBlur",
   });
-
-  console.log(`
-    Errors: ${JSON.stringify(errors)}
-    Is dirty: ${JSON.stringify(isDirty)}
-    Is valid: ${JSON.stringify(isValid)}
-  `);
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
