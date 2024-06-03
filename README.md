@@ -53,8 +53,7 @@ Postcode - Numbers, max 4?
 Once the form is valid and the user hits submit, print out the JSON
 object below the submit button.
 
-[ ] - Move on submit outside of form so it can be reused  
-[ ] - Move
+[x] - Move on submit outside of form so it can be reused
 
 # Instructions:
 
