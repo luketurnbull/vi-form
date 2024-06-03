@@ -40,10 +40,10 @@ These inputs should have validation and you should also note in the
 design the required fields \*.
 
 [x] - Create Checkbox molecule  
-[ ] - Move submit button into atoms  
-[ ] - Create Select input molecule  
-[ ] - Add more validation besides required  
+[x] - Move submit button into atoms  
+[x] - Create Select input molecule  
 [ ] - Add a prop to know if the input should be half the size of the form
+[ ] - Add more validation besides required
 
 Name - maxlength and minlength?  
 Email - email regex  

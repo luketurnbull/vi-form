@@ -12,31 +12,31 @@ const mockFormInputs: FormInput[] = [
     type: "text",
     name: "name",
     label: "Name",
-    required: true,
+    isRequired: true,
   },
   {
     type: "email",
     name: "email",
     label: "Email",
-    required: true,
+    isRequired: true,
   },
   {
     type: "phone",
     name: "phone",
     label: "Phone",
-    required: true,
+    isRequired: true,
   },
   {
     type: "text",
     name: "address",
     label: "Address",
-    required: false,
+    isRequired: false,
   },
   {
     type: "postcode",
     name: "postcode",
     label: "Postcode",
-    required: true,
+    isRequired: true,
   },
   {
     type: "select",
@@ -52,13 +52,13 @@ const mockFormInputs: FormInput[] = [
       "Victoria",
       "Western Australia",
     ],
-    required: true,
+    isRequired: true,
   },
   {
     type: "checkbox",
     name: "terms",
     label: "I agree to the terms and conditions",
-    required: true,
+    isRequired: true,
   },
 ];
 

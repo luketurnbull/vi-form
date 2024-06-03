@@ -3,5 +3,5 @@ export type FormInput = {
   name: string;
   label: string;
   options?: string[];
-  required: boolean;
+  isRequired: boolean;
 };

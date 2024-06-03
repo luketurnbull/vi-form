@@ -4,21 +4,21 @@ import { Control, Controller, FieldValues } from "react-hook-form";
 import { FormControlLabel, Checkbox as MuiCheckbox } from "@mui/material";
 
 import styles from "@/app/page.module.css";
+import { FormInput } from "@/constants/global";
 
-type CheckboxProps = {
-  name: string;
-  label: string;
+type CheckboxProps = Omit<FormInput, "type"> & {
   control: Control<FieldValues, any>;
-  required: boolean;
 };
 
 export default function Checkbox({
   name,
   label,
   control,
-  required,
+  isRequired,
 }: CheckboxProps) {
-  const validationRules = required ? { required: `${label} is required` } : {};
+  const validationRules = isRequired
+    ? { required: `${label} is required` }
+    : {};
 
   return (
     <Controller

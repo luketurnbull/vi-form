@@ -7,6 +7,7 @@ import { FormInput } from "@/constants/global";
 import Checkbox from "../molecules/checkbox";
 
 import styles from "./form-creator.module.css";
+import SelectInput from "@/components/molecules/select";
 
 type FormData = {
   formInputs: FormInput[];
@@ -37,7 +38,7 @@ export default function FormCreator({ formInputs, onSubmit }: FormData) {
 }
 
 function InputFactory({
-  formInput: { type, ...rest },
+  formInput: { type, options, ...rest },
   control,
 }: {
   formInput: FormInput;
@@ -50,6 +51,9 @@ function InputFactory({
     case "postcode":
       return <TextInput {...rest} control={control} />;
     case "select":
+      if (options) {
+        return <SelectInput {...rest} options={options} control={control} />;
+      }
       return <></>;
     case "checkbox":
       return <Checkbox {...rest} control={control} />;
