@@ -12,27 +12,32 @@ run `pnpm dev`
 [x] - Create initial project and delete original styles  
 [x] - Deploy to vercel  
 [x] - Install MUI
-[x] - Create component folder divided into ATOMIC designs
-[x] - Create Initial Text Input component
-[x] - Install react-hook-form
-[ ] - Create initial form in page.tsx
-[ ] - Add input to form
-
-# Instructions:
-
-## VI Test
 
 Using create-react-app or similar as a base - create a react Material UI
 form component that inherits an array of form input props.
 https://mui.com/material-ui/getting-started/installation/
 
+[x] - Create component folder divided into ATOMIC designs
+[x] - Create Initial Text Input component
+[x] - Install react-hook-form
+[ ] - Create initial form component
+[ ] - Create array of form input props
+
 The types of inputs required for this reusable component are:
-text
-email
-phone
-postcode
-select
-checkbox
+text - text input
+email - text input
+phone - text input, number only?
+postcode - text input, number only- max 4 chars?
+select - select
+checkbox - checkbox - assuming this is a single checkbox and not a group
+
+[ ] - Add text input to form  
+[ ] - Create Select input molecule  
+[ ] - Create Checkbox molecule
+
+# Instructions:
+
+## VI Test
 
 These inputs should have validation and you should also note in the
 design the required fields \*.
