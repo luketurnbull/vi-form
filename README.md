@@ -10,5 +10,5 @@ run `pnpm dev`
 # TODO:
 
 [x] - Create initial project and delete original styles  
-[x] - Deploy to vercel  
+[x ] - Deploy to vercel  
 [ ] - Install MUI
