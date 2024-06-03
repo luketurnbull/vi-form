@@ -1,5 +1,9 @@
+"use client";
+
+import { CssBaseline, ThemeProvider, useMediaQuery } from "@mui/material";
 import styles from "./page.module.css";
 import UserForm, { FormInput } from "@/components/organisms/user-form";
+import { darkTheme, lightTheme } from "@/theme";
 
 const mockFormInputs: FormInput[] = [
   {
@@ -57,14 +61,20 @@ const mockFormInputs: FormInput[] = [
 ];
 
 export default function Home() {
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const theme = prefersDarkMode ? darkTheme : lightTheme;
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <h1>V.I Form</h1>
-      </div>
-      <div>
-        <UserForm formInputs={mockFormInputs} />
-      </div>
-    </main>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <main className={styles.main}>
+        <div className={styles.description}>
+          <h1>V.I Form</h1>
+        </div>
+        <div>
+          <UserForm formInputs={mockFormInputs} />
+        </div>
+      </main>
+    </ThemeProvider>
   );
 }

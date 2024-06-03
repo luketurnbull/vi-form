@@ -1,12 +1,12 @@
 "use client";
 
-import { Controller } from "react-hook-form";
+import { Control, Controller, FieldValues } from "react-hook-form";
 import { TextField } from "@mui/material";
 
 type TextInputProps = {
   name: string;
   label: string;
-  control: any;
+  control: Control<FieldValues, any>;
   required: boolean;
 };
 
@@ -28,6 +28,7 @@ export default function TextInput({
           error={!!error}
           helperText={error ? error.message : null}
           fullWidth
+          variant="outlined"
           margin="normal"
         />
       )}

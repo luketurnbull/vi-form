@@ -1,16 +1,15 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  row-gap: 20px;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
 }
 
 .description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
+  display: inline-block;
+  text-align: center;
   font-size: 0.85rem;
   max-width: var(--max-width);
   width: 100%;

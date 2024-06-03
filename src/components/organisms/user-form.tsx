@@ -19,7 +19,7 @@ export default function UserForm({ formInputs }: FormData) {
   const { handleSubmit, control } = useForm();
 
   return (
-    <Form>
+    <form onSubmit={handleSubmit(() => {})}>
       {formInputs.map((formInput: FormInput) => (
         <InputFactory
           key={formInput.name}
@@ -27,7 +27,7 @@ export default function UserForm({ formInputs }: FormData) {
           control={control}
         />
       ))}
-    </Form>
+    </form>
   );
 }
 
