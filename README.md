@@ -12,7 +12,9 @@ run `pnpm dev`
 [x] - Create initial project and delete original styles  
 [x] - Deploy to vercel  
 [x] - Install MUI
-[ ] - Create component folder divided into ATOMIC designs
+[x] - Create component folder divided into ATOMIC designs
+[x] - Create Initial Text Input component
+[ ] - Install react-hooks-forms
 
 # Instructions:
 
