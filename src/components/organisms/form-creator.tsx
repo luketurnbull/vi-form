@@ -45,7 +45,7 @@ function InputFactory({
   formInput: FormInput;
   control: Control<FieldValues, any>;
 }) {
-  const validationRules = validationCreator(type, isRequired);
+  const validationRules = validationCreator(type, isRequired, rest.name);
 
   switch (type) {
     case "text":

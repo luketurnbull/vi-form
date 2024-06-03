@@ -1,11 +1,15 @@
 import { FormInputType } from "@/constants/global";
 
-export const validationCreator = (type: FormInputType, isRequired: boolean) => {
+export const validationCreator = (
+  type: FormInputType,
+  isRequired: boolean,
+  name: string
+) => {
   const validationRules: Record<string, any> = {};
 
   if (isRequired) {
     validationRules.required = `${
-      type.charAt(0).toUpperCase() + type.slice(1)
+      name.charAt(0).toUpperCase() + name.slice(1)
     } is required`;
   }
 

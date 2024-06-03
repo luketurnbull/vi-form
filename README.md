@@ -42,8 +42,8 @@ design the required fields \*.
 [x] - Create Checkbox molecule  
 [x] - Move submit button into atoms  
 [x] - Create Select input molecule  
+[x] - Add more validation besides required  
 [ ] - Add a prop to know if the input should be half the size of the form
-[ ] - Add more validation besides required
 
 Name - maxlength and minlength?  
 Email - email regex  
