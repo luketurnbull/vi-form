@@ -3,20 +3,13 @@
 import { Control, FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "@/components/molecules/text-input";
 import Button from "@mui/material/Button";
-
-export type FormInput = {
-  type: "text" | "email" | "phone" | "postcode" | "select" | "checkbox";
-  name: string;
-  label: string;
-  options?: string[];
-  required: boolean;
-};
+import { FormInput } from "@/app/constants/global";
 
 type FormData = {
   formInputs: FormInput[];
 };
 
-export default function UserForm({ formInputs }: FormData) {
+export default function FormCreator({ formInputs }: FormData) {
   const { handleSubmit, control } = useForm({
     mode: "onBlur",
   });

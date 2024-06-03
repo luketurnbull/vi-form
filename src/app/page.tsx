@@ -2,8 +2,9 @@
 
 import { CssBaseline, ThemeProvider, useMediaQuery } from "@mui/material";
 import styles from "./page.module.css";
-import UserForm, { FormInput } from "@/components/organisms/user-form";
 import { darkTheme, lightTheme } from "@/theme";
+import FormCreator from "@/components/organisms/form-creator";
+import { FormInput } from "./constants/global";
 
 const mockFormInputs: FormInput[] = [
   {
@@ -72,7 +73,7 @@ export default function Home() {
           <h1>V.I Form</h1>
         </div>
         <div>
-          <UserForm formInputs={mockFormInputs} />
+          <FormCreator formInputs={mockFormInputs} />
         </div>
       </main>
     </ThemeProvider>
