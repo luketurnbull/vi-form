@@ -1,7 +1,14 @@
 "use client";
 
-import { Control, FieldValues, Form, useForm } from "react-hook-form";
+import {
+  Control,
+  FieldValues,
+  Form,
+  SubmitHandler,
+  useForm,
+} from "react-hook-form";
 import TextInput from "@/components/molecules/text-input";
+import Button from "@mui/material/Button";
 
 export type FormInput = {
   type: "text" | "email" | "phone" | "postcode" | "select" | "checkbox";
@@ -16,10 +23,32 @@ type FormData = {
 };
 
 export default function UserForm({ formInputs }: FormData) {
-  const { handleSubmit, control } = useForm();
+  // Create an object with default values
+  const defaultValues = formInputs.reduce((acc, input) => {
+    acc[input.name] = input.type === "checkbox" ? false : "";
+    return acc;
+  }, {} as Record<string, any>);
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors, isDirty, isValid },
+  } = useForm({
+    defaultValues,
+  });
+
+  console.log(`
+    Errors: ${JSON.stringify(errors)}
+    Is dirty: ${JSON.stringify(isDirty)}
+    Is valid: ${JSON.stringify(isValid)}
+  `);
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    console.log(data);
+  };
 
   return (
-    <form onSubmit={handleSubmit(() => {})}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       {formInputs.map((formInput: FormInput) => (
         <InputFactory
           key={formInput.name}
@@ -27,6 +56,9 @@ export default function UserForm({ formInputs }: FormData) {
           control={control}
         />
       ))}
+      <Button type="submit" variant="contained" color="primary">
+        Submit
+      </Button>
     </form>
   );
 }

@@ -2,6 +2,7 @@
 
 import { Control, Controller, FieldValues } from "react-hook-form";
 import { TextField } from "@mui/material";
+import { useMemo } from "react";
 
 type TextInputProps = {
   name: string;
@@ -16,22 +17,29 @@ export default function TextInput({
   control,
   required,
 }: TextInputProps) {
+  const validationRules = required ? { required: `${label} is required` } : {};
+
   return (
     <Controller
       name={name}
       control={control}
-      rules={{ required: required ? `${label} is required` : false }}
-      render={({ field, fieldState: { error } }) => (
-        <TextField
-          {...field}
-          label={label}
-          error={!!error}
-          helperText={error ? error.message : null}
-          fullWidth
-          variant="outlined"
-          margin="normal"
-        />
-      )}
+      rules={validationRules}
+      defaultValue=""
+      render={({ field, fieldState: { error } }) => {
+        console.log(error);
+        return (
+          <TextField
+            {...field}
+            label={label}
+            required={required}
+            error={!!error}
+            helperText={error ? error.message : null}
+            fullWidth
+            variant="outlined"
+            margin="normal"
+          />
+        );
+      }}
     />
   );
 }
