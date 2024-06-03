@@ -7,6 +7,14 @@ Deployed to: https://vi-form.vercel.app/
 run `pnpm install`  
 run `pnpm dev`
 
+## Feedback from Luke, on next steps
+
+Things I would have liked to have done but ran out of time:
+
+- Add a prop to display the inputs 50% width when looping through them
+- Add jest tests around key parts like the "validatorCreator" to make it more robust
+- Tweak some styling and padding, currently the submit button is in capitals and the padding around terms and conditions is not good, also the checkbox and text should go re
+
 # TODO:
 
 [x] - Create initial project and delete original styles  
