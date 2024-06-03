@@ -2,7 +2,7 @@
 
 import { Control, FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "@/components/molecules/text-input";
-import Button from "@mui/material/Button";
+import Button from "@/components/atoms/button";
 import { FormInput } from "@/constants/global";
 import Checkbox from "../molecules/checkbox";
 
@@ -10,16 +10,13 @@ import styles from "./form-creator.module.css";
 
 type FormData = {
   formInputs: FormInput[];
+  onSubmit: SubmitHandler<FieldValues>;
 };
 
-export default function FormCreator({ formInputs }: FormData) {
+export default function FormCreator({ formInputs, onSubmit }: FormData) {
   const { handleSubmit, control } = useForm({
     mode: "onBlur",
   });
-
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
-  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -31,10 +28,10 @@ export default function FormCreator({ formInputs }: FormData) {
             control={control}
           />
         ))}
+        <div>
+          <Button type="submit">Submit</Button>
+        </div>
       </div>
-      <Button type="submit" variant="contained" color="primary">
-        Submit
-      </Button>
     </form>
   );
 }
